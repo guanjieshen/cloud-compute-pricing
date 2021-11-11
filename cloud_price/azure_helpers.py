@@ -5,6 +5,7 @@ from cloud_price.constants.azure import (
     AZURE_PRICE_URL,
     AZURE_VM_OS,
     AZURE_VM_PRICING_TYPES,
+    AZURE_VM_RESERVATION_TERMS,
     AZURE_VM_TYPES,
 )
 
@@ -15,16 +16,20 @@ Validation functions - Should be used to verify it the input parameters are vali
 
 
 class ValidationFactory(object):
+
+    # TODO: Add list of valid terms in the error message
     @staticmethod
     def validateRegion(region: str):
         if region not in AZURE_REGIONS:
             raise ValueError("Azure Region not supported")
 
+    # TODO: Add list of valid terms in the error message
     @staticmethod
     def validateVMPricingType(pricingType: str):
         if pricingType not in AZURE_VM_PRICING_TYPES:
             raise ValueError("Azure VM Pricing Type not supported")
 
+    # TODO: Add list of valid terms in the error message
     @staticmethod
     def validateVMType(type: str):
         if type not in AZURE_VM_TYPES:
@@ -38,6 +43,16 @@ class ValidationFactory(object):
                 os_list += os + " "
             raise ValueError(
                 f"Azure VM OS not supported. Please select from the following: {os_list}"
+            )
+
+    @staticmethod
+    def validateReservationTerm(reservation_term: str):
+        reservation_term_list = ""
+        if reservation_term not in AZURE_VM_RESERVATION_TERMS:
+            for reservation_term in AZURE_VM_RESERVATION_TERMS:
+                reservation_term_list += reservation_term + " "
+            raise ValueError(
+                f"Azure Reservation Term not supported. Please select from the following: {reservation_term_list}"
             )
 
 

@@ -1,3 +1,7 @@
+from dataclasses import dataclass
+
+
+@dataclass(init=False)
 class AzurePrice:
     def __init__(
         self,
@@ -21,6 +25,8 @@ class AzurePrice:
         type,
         isPrimaryMeterRegion,
         armSkuName,
+        reservationTerm=None,
+        effectiveEndDate=None,
         **kwargs
     ):
         self.currency_code = currencyCode
@@ -30,11 +36,13 @@ class AzurePrice:
         self.arm_region_name = armRegionName
         self.location = location
         self.effective_start_date = effectiveStartDate
+        self.effective_end_date = effectiveEndDate
         self.meter_id = meterId
         self.meter_name = meterName
         self.product_id = productId
         self.sku_id = skuId
         self.product_name = productName
+        self.reservation_term = reservationTerm
         self.sku_name = skuName
         self.service_name = serviceName
         self.service_id = serviceId
