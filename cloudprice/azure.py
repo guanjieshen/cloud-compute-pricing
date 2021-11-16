@@ -12,7 +12,7 @@ class AzureVM:
         self.defaultFilters = [
             self.odata_factory.equalsFilter("serviceName", "Virtual Machines")
         ]
-        self.__getVMPrices(region, arm_sku_name)
+        self.__getVmPrices(region, arm_sku_name)
 
     def __filterForOs(self, azure_price: List[AzurePrice], os: str) -> List[AzurePrice]:
         ValidationFactory.validateOsType(os)
@@ -39,7 +39,7 @@ class AzureVM:
                 azure_price,
             )
 
-    def __getVMPrices(self, region: str, arm_sku_name: str):
+    def __getVmPrices(self, region: str, arm_sku_name: str):
         ValidationFactory.validateRegion(region)
 
         filters = self.defaultFilters
@@ -93,7 +93,7 @@ class AzureVM:
 
         return on_demand_price_list
 
-    def getPrice(
+    def getLatestPrice(
         self,
         os="Linux",
         vm_type="Standard",
