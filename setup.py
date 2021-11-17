@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="cloudprice",
-    version="0.0.2",
+    version="0.0.3",
     description="A SDK for cloud compute pricing",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
