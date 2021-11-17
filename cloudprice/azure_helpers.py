@@ -1,6 +1,6 @@
 from typing import List
 import requests
-from cloud_price.constants.azure import (
+from cloudprice.constants.azure import (
     AZURE_REGIONS,
     AZURE_PRICE_URL,
     AZURE_VM_OS,

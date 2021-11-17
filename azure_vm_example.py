@@ -1,6 +1,5 @@
 from cloudprice import AzureVM
 
-
 # Get Azure VM Pricing
 example_vm = AzureVM("US West", "Standard_E8_v3")
 
