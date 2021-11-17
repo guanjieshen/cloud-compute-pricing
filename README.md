@@ -1,6 +1,6 @@
 # cloud-compute-pricing
 [![image](https://img.shields.io/pypi/v/cloudprice.svg)](https://pypi.org/project/cloudprice/)
-<!-- [![image](https://pepy.tech/badge/cloudprice)](https://pepy.tech/project/geodemo) -->
+[![image](https://pepy.tech/badge/cloudprice)](https://pepy.tech/project/geodemo)
 [![image](https://github.com/guanjieshen/cloud-compute-pricing/workflows/build/badge.svg)](https://github.com/giswqs/geodemo/actions?query=workflow%3Abuild)
 [![image](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
