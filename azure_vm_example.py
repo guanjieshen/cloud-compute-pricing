@@ -1,4 +1,5 @@
-from cloudprice import AzureVM
+from cloudprice.azure import AzureVM
+from cloudprice.constants.azure import AZURE_VM_RESERVATION_TERMS
 
 # Get Azure VM Pricing
 example_vm = AzureVM("US West", "Standard_E8_v3")
@@ -54,7 +55,8 @@ Retail Price: {example_vm_res_1yr.retail_price}
 
 # Get Azure VM Pricing for 3 year reservation
 example_vm_res_3yr = example_vm.getLatestPrice(
-    vm_pricing_type="Reservation", reservation_term="3YR"
+    vm_pricing_type="Reservation",
+    reservation_term=AZURE_VM_RESERVATION_TERMS.THREE_YEAR,
 )
 print(
     f"""

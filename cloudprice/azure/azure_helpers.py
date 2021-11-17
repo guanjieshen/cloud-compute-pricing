@@ -8,6 +8,7 @@ from cloudprice.constants.azure import (
     AZURE_VM_RESERVATION_TERMS,
     AZURE_VM_TYPES,
 )
+from cloudprice.constants.constants_helper import Enum
 
 
 """
@@ -47,12 +48,13 @@ class ValidationFactory(object):
 
     @staticmethod
     def validateReservationTerm(reservation_term: str):
-        reservation_term_list = ""
+        reservation_term_list = AZURE_VM_RESERVATION_TERMS.values()
+
         if reservation_term not in AZURE_VM_RESERVATION_TERMS:
             for reservation_term in AZURE_VM_RESERVATION_TERMS:
                 reservation_term_list += reservation_term + " "
             raise ValueError(
-                f"Azure Reservation Term not supported. Please select from the following: {reservation_term_list}"
+                f"Azure Reservation Term not supported. Please select from a valid AZURE_VM_RESERVATION_TERMS"
             )
 
 

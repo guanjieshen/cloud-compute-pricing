@@ -1,7 +1,7 @@
 # cloud-compute-pricing
 [![image](https://img.shields.io/pypi/v/cloudprice.svg)](https://pypi.org/project/cloudprice/)
-[![image](https://pepy.tech/badge/cloudprice)](https://pepy.tech/project/geodemo)
-[![image](https://github.com/guanjieshen/cloud-compute-pricing/workflows/build/badge.svg)](https://github.com/giswqs/geodemo/actions?query=workflow%3Abuild)
+[![image](https://pepy.tech/badge/cloudprice)](https://pepy.tech/project/cloudprice)
+[![image](https://github.com/guanjieshen/cloud-compute-pricing/workflows/build/badge.svg)](https://github.com/guanjieshen/cloud-compute-pricing/actions/workflows/build.yaml)
 [![image](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### Examples
@@ -15,7 +15,7 @@ Using the default parameters will return the price for the __Linux On Demand VM_
 See example below on how to use the `AzureVM` module. 
 
 ```python
-from cloudprice import AzureVM
+from cloudprice.azure import AzureVM
 
 # Get Azure VM Pricing
 example_vm = AzureVM("US West", "Standard_E8_v3")

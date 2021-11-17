@@ -1,8 +1,10 @@
 import json
 from typing import List
 
-from cloudprice.azure_helpers import ODataFactory, ValidationFactory
-from cloudprice.prices import AzurePrice
+from cloudprice.constants.azure import AZURE_VM_RESERVATION_TERMS
+
+from .azure_helpers import ODataFactory, ValidationFactory
+from .prices import AzurePrice
 
 
 class AzureVM:
@@ -67,17 +69,15 @@ class AzureVM:
     def __handleReservations(
         self, price_list: List[AzurePrice], reservation_term: str
     ) -> AzurePrice:
-        ValidationFactory.validateReservationTerm(reservation_term)
+        # ValidationFactory.validateReservationTerm(reservation_term)
 
-        if reservation_term == "1YR":
-            reservation_price = list(
-                filter(lambda x: x.reservation_term == "1 Year", price_list)
-            )[0]
+        reservation_price = list(
+            filter(lambda x: x.reservation_term == reservation_term, price_list)
+        )[0]
+
+        if reservation_term == AZURE_VM_RESERVATION_TERMS.ONE_YEAR:
             reservation_price.unit_price = reservation_price.unit_price / 365 / 24
-        elif reservation_term == "3YR":
-            reservation_price = list(
-                filter(lambda x: x.reservation_term == "3 Years", price_list)
-            )[0]
+        elif reservation_term == AZURE_VM_RESERVATION_TERMS.THREE_YEAR:
             reservation_price.unit_price = reservation_price.unit_price / 3 / 365 / 24
         return reservation_price
 
@@ -98,7 +98,7 @@ class AzureVM:
         os="Linux",
         vm_type="Standard",
         vm_pricing_type="Consumption",
-        reservation_term="1YR",
+        reservation_term=AZURE_VM_RESERVATION_TERMS.ONE_YEAR,
     ):
         # Check Pricing Type to see if valid
         ValidationFactory.validateVMPricingType(vm_pricing_type)
