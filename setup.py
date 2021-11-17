@@ -5,18 +5,9 @@ import re
 from setuptools import setup, find_packages
 
 
-ROOT = os.path.dirname(__file__)
-VERSION_RE = re.compile(r"""__version__ = ['"]([0-9.]+)['"]""")
-
-
-def get_version():
-    init = open(os.path.join(ROOT, "cloudprice", "__init__.py")).read()
-    return VERSION_RE.search(init).group(1)
-
-
 setup(
     name="cloudprice",
-    version=get_version(),
+    version="0.0.3",
     description="A SDK for cloud compute pricing",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
