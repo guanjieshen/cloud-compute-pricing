@@ -1,8 +1,8 @@
 import json
 from typing import List
 
-from cloud_price.azure_helpers import ODataFactory, ValidationFactory
-from cloud_price.prices import AzurePrice
+from cloudprice.azure_helpers import ODataFactory, ValidationFactory
+from cloudprice.prices import AzurePrice
 
 
 class AzureVM:

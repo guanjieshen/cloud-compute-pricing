@@ -15,9 +15,9 @@ def get_version():
 
 
 setup(
-    name="cloudcomputepricing",
+    name="cloudprice",
     version=get_version(),
-    description="A SDK for cloud (Azure) compute pricing",
+    description="A SDK for cloud compute pricing",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="Guanjie Shen",
@@ -30,10 +30,6 @@ setup(
         "Intended Audience :: Developers",
         "Natural Language :: English",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
 )
